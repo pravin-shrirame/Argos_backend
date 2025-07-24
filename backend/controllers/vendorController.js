@@ -39,3 +39,14 @@ for (const vendor of vendors) {
       }
     });
 };
+
+
+// Get all vendors from Snowflake
+exports.getVendors = async (req, res) => {
+  try {
+    const rows = await snowflake.execute('SELECT * FROM vendors');
+    res.status(200).json({ vendors: rows });
+  } catch (err) {
+    res.status(500).json({ error: 'Failed to fetch vendors', details: err.message });
+  }
+};
