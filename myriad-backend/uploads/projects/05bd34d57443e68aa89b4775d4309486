@@ -1,0 +1,12 @@
+[
+  {
+    "taskId": "task_001",
+    "query": "What is artificial intelligence?",
+    "context": "The question is about AI definitions."
+  },
+  {
+    "taskId": "task_002",
+    "query": "Explain machine learning.",
+    "context": "Context involves algorithms that learn."
+  }
+]

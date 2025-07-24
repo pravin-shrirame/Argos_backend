@@ -1,0 +1,4 @@
+name,email,locale
+Alice,alice@example.com,en-US
+Bob,bob@example.com,fr-FR
+Charlie,charlie@example.com,de-DE
