@@ -1,5 +1,5 @@
-// snowflake.js
 const snowflake = require('snowflake-sdk');
+snowflake.configure({ logLevel: 'OFF' });
 
 const connection = snowflake.createConnection({
   account: process.env.SNOWFLAKE_ACCOUNT,
@@ -12,9 +12,9 @@ const connection = snowflake.createConnection({
 
 connection.connect((err, conn) => {
   if (err) {
-    console.error('❌ Unable to connect to Snowflake:', err.message);
+    console.error('Unable to connect to Snowflake:', err.message);
   } else {
-    console.log('✅ Connected to Snowflake');
+    console.log('Connected to Snowflake DB');
   }
 });
 
@@ -25,7 +25,7 @@ async function execute(query, binds = []) {
       binds,
       complete: function (err, stmt, rows) {
         if (err) {
-          console.error('❌ Error executing query:', err.message);
+          console.error('Error executing query:', err.message);
           reject(err);
         } else {
           resolve(rows);
